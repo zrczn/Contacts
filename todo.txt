@@ -1,2 +1,3 @@
 passwd storage
 do not allow future dates
+zmien priv token

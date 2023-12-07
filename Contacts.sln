@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.API", "PhoneBook\PhoneBook.API.csproj", "{D78863DB-7B0E-4782-826F-90B36E258C21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.API", "PhoneBook\Contacts.API.csproj", "{D78863DB-7B0E-4782-826F-90B36E258C21}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{738DEF15-ECB1-4B23-B3A1-674582BCAE19}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Services.Abstracti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Persistence", "Persistence\Contacts.Persistence.csproj", "{EFF12C40-D2B1-4920-9E8B-F3E3322F0E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Domain", "Contacts.Domain\Contacts.Domain.csproj", "{6656F78A-601F-47FE-A6C3-687D3F1BA284}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Domain", "Contacts.Domain\Contacts.Domain.csproj", "{6656F78A-601F-47FE-A6C3-687D3F1BA284}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{D1817EEF-F4DE-4A3A-8FD2-7BE01C82DE32}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "El
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{AC9A54A4-8AE3-45B7-BDEC-9DA83C58BECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Security", "Contacts.Security\Contacts.Security.csproj", "{B3E065A1-D902-4201-B490-4F0D066F9C90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.BlazorWASM", "Contacts.BlazorWASM\Contacts.BlazorWASM.csproj", "{659C73FC-BFE5-441B-BB59-CEE017F940A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,10 +52,10 @@ Global
 		{6656F78A-601F-47FE-A6C3-687D3F1BA284}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6656F78A-601F-47FE-A6C3-687D3F1BA284}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6656F78A-601F-47FE-A6C3-687D3F1BA284}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3E065A1-D902-4201-B490-4F0D066F9C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3E065A1-D902-4201-B490-4F0D066F9C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3E065A1-D902-4201-B490-4F0D066F9C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3E065A1-D902-4201-B490-4F0D066F9C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{659C73FC-BFE5-441B-BB59-CEE017F940A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{659C73FC-BFE5-441B-BB59-CEE017F940A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659C73FC-BFE5-441B-BB59-CEE017F940A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{659C73FC-BFE5-441B-BB59-CEE017F940A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,7 +66,7 @@ Global
 		{8FFAAF2D-128D-4AD2-B44A-F74E7DADFEB6} = {738DEF15-ECB1-4B23-B3A1-674582BCAE19}
 		{EFF12C40-D2B1-4920-9E8B-F3E3322F0E1F} = {00FCA915-4763-4093-B9D5-5DE97607EEC5}
 		{6656F78A-601F-47FE-A6C3-687D3F1BA284} = {738DEF15-ECB1-4B23-B3A1-674582BCAE19}
-		{B3E065A1-D902-4201-B490-4F0D066F9C90} = {00FCA915-4763-4093-B9D5-5DE97607EEC5}
+		{659C73FC-BFE5-441B-BB59-CEE017F940A5} = {AC9A54A4-8AE3-45B7-BDEC-9DA83C58BECF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6E50B5E-2C5D-419B-84E7-F0C03DB8DB9A}

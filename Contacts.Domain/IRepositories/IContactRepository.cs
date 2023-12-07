@@ -14,7 +14,7 @@ namespace Contacts.Domain.Repositories
         Task<Person> GetPersonAsync(Guid Id);
         Task<bool> DeletePersonAsync(Guid Id);
         Task<bool> CreatePersonAsync(Person person);
-        Task<bool> UpdatePersonAsync(Guid Id, Person person);
+        Task<bool> UpdatePersonAsync(Guid Id, PersonDTO person);
 
         Task<(Contact, IEnumerable<Contact>)> GetContactTreeAsync(Guid id);
         Task CreateContactAsync();

@@ -58,7 +58,7 @@ namespace Contacts.Persistence.Repositories
         }
 
         public async Task<Person> GetPersonAsync(Guid Id)
-            => await _DbCon.Persons.FirstOrDefaultAsync(x => x.Id == Id);
+            => await _DbCon.Persons.Include(y => y.Contact).ThenInclude(z => z.ContactRel).FirstOrDefaultAsync(x => x.Id == Id);
 
 
         public async Task<IEnumerable<PersonDisplay>> GetPersonOverallAsync()
@@ -73,7 +73,7 @@ namespace Contacts.Persistence.Repositories
             return peoples;
         }
 
-        public Task<bool> UpdatePersonAsync(Guid Id, Person person)
+        public Task<bool> UpdatePersonAsync(Guid Id, PersonDTO person)
         {
             throw new NotImplementedException();
         }

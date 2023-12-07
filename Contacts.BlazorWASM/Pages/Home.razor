@@ -1,0 +1,29 @@
+﻿@page "/"
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+
+<Contacts.BlazorWASM.Components.TableComponent
+    Items="contacts">
+</Contacts.BlazorWASM.Components.TableComponent>
+
+@code{
+    public static List<PersonDisplay> contacts = new List<PersonDisplay>()
+    {
+        new PersonDisplay()
+        {
+             FirstName = "andrev",
+              LastName = "djd",
+               Id = Guid.NewGuid()
+        },
+        new PersonDisplay()
+        {
+             FirstName = "monica",
+              LastName = "kkk",
+               Id = Guid.NewGuid()
+        },
+    };
+}

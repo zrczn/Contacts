@@ -15,3 +15,4 @@ D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Domain.pdb
 D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.csproj.AssemblyReference.cache
 D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.csproj.CopyComplete
 D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.genruntimeconfig.cache
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.sourcelink.json

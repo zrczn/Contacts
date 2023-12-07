@@ -1,0 +1,48 @@
+﻿@using System.Reflection
+@typeparam T
+
+<a>jal</a>
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (var item in _propNames)
+            {
+                <th>@(item)</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Items)
+        {
+            <tr>
+                @foreach (var prop in _propertyInfos)
+                {
+                    <td>@(prop.GetValue(item))</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+
+    [Parameter]
+    public List<T> Items { get; set; }
+
+    private List<string> _propNames { get; set; } = new List<string>();
+    private PropertyInfo[] _propertyInfos { get; set; } = Array.Empty<PropertyInfo>();
+
+
+    protected override void OnInitialized()
+    {
+        Type type = typeof(T);
+        PropertyInfo[] props = type.GetProperties();
+        _propertyInfos = props;
+
+        foreach(var item in props)
+        {
+            _propNames.Add(item.ToString());
+        }
+    }
+}

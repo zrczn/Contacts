@@ -9,3 +9,4 @@ D:\Repos\Repos22\PhoneBook\Contacts.Domain\obj\Debug\net8.0\Contacts.Domain.dll
 D:\Repos\Repos22\PhoneBook\Contacts.Domain\obj\Debug\net8.0\refint\Contacts.Domain.dll
 D:\Repos\Repos22\PhoneBook\Contacts.Domain\obj\Debug\net8.0\Contacts.Domain.pdb
 D:\Repos\Repos22\PhoneBook\Contacts.Domain\obj\Debug\net8.0\ref\Contacts.Domain.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Domain\obj\Debug\net8.0\Contacts.Domain.sourcelink.json

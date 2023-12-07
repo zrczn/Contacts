@@ -139,6 +139,8 @@ D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Contacts.Persistence.dll
 D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Contacts.Persistence.pdb
 D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Contacts.Domain.pdb
 D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Repos\Repos22\PhoneBook\PhoneBook\obj\Debug\net8.0\PhoneBook.API.sourcelink.json
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Contacts.Security.dll
-D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Contacts.Security.pdb
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

@@ -18,7 +18,6 @@ namespace PhoneBook.API.Controllers
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<PersonDisplay>>> GetPersonsOverall()
         {
             var getPpls = await _contactRepo.GetPersonOverallAsync();
