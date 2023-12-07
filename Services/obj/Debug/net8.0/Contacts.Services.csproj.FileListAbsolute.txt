@@ -1,0 +1,11 @@
+D:\Repos\Repos22\PhoneBook\Services\bin\Debug\net8.0\Contacts.Services.deps.json
+D:\Repos\Repos22\PhoneBook\Services\bin\Debug\net8.0\Contacts.Services.dll
+D:\Repos\Repos22\PhoneBook\Services\bin\Debug\net8.0\Contacts.Services.pdb
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\Contacts.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\Contacts.Services.AssemblyInfoInputs.cache
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\Contacts.Services.AssemblyInfo.cs
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\Contacts.Services.csproj.CoreCompileInputs.cache
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\Contacts.Services.dll
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\refint\Contacts.Services.dll
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\Contacts.Services.pdb
+D:\Repos\Repos22\PhoneBook\Services\obj\Debug\net8.0\ref\Contacts.Services.dll

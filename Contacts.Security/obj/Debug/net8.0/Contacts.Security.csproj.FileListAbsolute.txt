@@ -1,0 +1,17 @@
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Security.deps.json
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Security.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Security.pdb
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.AssemblyInfoInputs.cache
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.AssemblyInfo.cs
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.csproj.CoreCompileInputs.cache
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\refint\Contacts.Security.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.pdb
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\ref\Contacts.Security.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Domain.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Persistence.dll
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Domain.pdb
+D:\Repos\Repos22\PhoneBook\Contacts.Security\bin\Debug\net8.0\Contacts.Persistence.pdb
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.csproj.AssemblyReference.cache
+D:\Repos\Repos22\PhoneBook\Contacts.Security\obj\Debug\net8.0\Contacts.Security.csproj.CopyComplete

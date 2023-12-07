@@ -1,0 +1,17 @@
+D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Persistence.deps.json
+D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Persistence.dll
+D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Persistence.pdb
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.AssemblyInfoInputs.cache
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.AssemblyInfo.cs
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.csproj.CoreCompileInputs.cache
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.dll
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\refint\Contacts.Persistence.dll
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.pdb
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\ref\Contacts.Persistence.dll
+D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Persistence.runtimeconfig.json
+D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Domain.dll
+D:\Repos\Repos22\PhoneBook\Persistence\bin\Debug\net8.0\Contacts.Domain.pdb
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.csproj.AssemblyReference.cache
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.csproj.CopyComplete
+D:\Repos\Repos22\PhoneBook\Persistence\obj\Debug\net8.0\Contacts.Persistence.genruntimeconfig.cache
