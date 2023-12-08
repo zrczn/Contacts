@@ -18,43 +18,63 @@ namespace Contacts.Persistence.Repositories
         public ContactRepository(ContactsDatabaseContext _DbCon)
             => this._DbCon = _DbCon;
 
-        public Task CreateContactAsync()
+        public async Task<bool> DeletePersonAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            var getPrsn = await GetPersonAsync(Id);
+
+            if (getPrsn == null)
+                return false;
+
+            try
+            {
+                _DbCon.Persons.Remove(getPrsn);
+                await _DbCon.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public Task<bool> CreatePersonAsync(Person person)
+        public async Task<(ContactDTO, IEnumerable<ContactDTO>)> GetContactTreeAsync(Guid Id)
         {
-            throw new NotImplementedException();
-        }
+            var checkForAnyContact = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.Id == Id);
 
-        public Task<bool> DeletePersonAsync(Guid Id)
-        {
-            throw new NotImplementedException();
-        }
+            if (checkForAnyContact is null)
+                return (null, null);
 
-        public async Task<(Contact, IEnumerable<Contact>)> GetContactTreeAsync(Guid Id)
-        {
-            throw new NotImplementedException();
-            //Contact ParentContact = default;
-            //List<Contact> SubCuntacts;
+            var getCascadeContact = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.ParentContactId == Id);
 
-            //var getContactId = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.Id == Id);
+            if(getCascadeContact is null)
+            {
+                var getContact = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.Id == Id);
 
-            //if (getContactId != null)
-            //{
-            //    var parentContact = getContactId.ParentContactId;
+                var contactDTO = new ContactDTO()
+                {
+                    Id = getContact.Id,
+                    Name = getContact.Name
+                };
 
-            //    if (parentContact != null)
-            //    {
-            //        SubCuntacts = await _DbCon.Contacts.Where(x => x.ParentContactId == parentContact).Select(x => x).ToListAsync();
-            //    }
-            //    else
-            //    {
-                    
-            //    }
+                return (contactDTO, null);
+            }
 
-            //}
+            var getParentContact = await _DbCon.Contacts.FirstAsync(x => x.Id == (Guid)getCascadeContact.ParentContactId);
+
+            var cascadeContactIntoDTO = new ContactDTO
+            {
+                Id = getParentContact.Id,
+                Name = getParentContact.Name
+            };
+
+            var getSubContacts = await _DbCon.Contacts.Where(x => x.ParentContactId == Id).Select(y => 
+                new ContactDTO
+                {
+                    Id = y.Id,
+                    Name = y.Name
+                }).ToListAsync();
+
+            return (cascadeContactIntoDTO, getSubContacts);
         }
 
         public async Task<Person> GetPersonAsync(Guid Id)
@@ -73,9 +93,72 @@ namespace Contacts.Persistence.Repositories
             return peoples;
         }
 
-        public Task<bool> UpdatePersonAsync(Guid Id, PersonDTO person)
+        public async Task<int> CrupDatePersonAsync(Guid Id, PersonDTO person)
         {
-            throw new NotImplementedException();
+            //0 - error
+            //1 - created
+            //2 - updated
+
+
+            var getPerson = await GetPersonAsync(Id);
+
+            if (getPerson is null)
+                return 0;
+
+            var getCascadeContact = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.ParentContactId == person.ParentContactId
+                && x.Id == person.SubContactId);
+
+            //update
+
+            if (getCascadeContact != null)
+            {
+                getPerson.ContactId = getCascadeContact.Id;
+
+                try
+                {
+                    await _DbCon.SaveChangesAsync();
+                    return 2;
+                }
+                catch
+                {
+                    return 0;
+                }
+
+            }
+
+            //create
+
+            var getParentContact = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.Id == person.ParentContactId && x.ParentContactId == null);
+
+            var newContact = new Contact()
+            {
+                Id = person.SubContactId,
+                ParentContactId = getParentContact.Id,
+                Name = person.SubContactName
+            };
+
+            var newPerson = new Person()
+            {
+                Id = person.Id,
+                Email = person.Email,
+                DateOfBirth = person.DateOfBirth,
+                Password = person.Password,
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                PhoneNumber = person.PhoneNumber,
+                Contact = newContact
+            };
+
+            try
+            {
+                 _DbCon.Persons.Add(newPerson);
+                await _DbCon.SaveChangesAsync();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
     }

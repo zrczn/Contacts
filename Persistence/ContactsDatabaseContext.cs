@@ -1,4 +1,5 @@
 ﻿using Contacts.Domain.DbEntites;
+using Contacts.Domain.DTO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
