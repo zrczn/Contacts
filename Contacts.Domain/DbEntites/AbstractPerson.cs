@@ -22,8 +22,8 @@ namespace Contacts.Domain.DbEntites
 
         [Required]
         //https://regexlib.com
-        [RegularExpression("^((([!#$%&'*+\\-/=?^_`{|}~\\w])|([!#$%&'*+\\-/=?^_`{|}~\\w][!#$%&'*+\\-/=?^_`{|}~\\.\\w]{0,}" +
-            "[!#$%&'*+\\-/=?^_`{|}~\\w]))[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)$", ErrorMessage = $"{nameof(Email)} Email is invalid, try another")]
+        //[RegularExpression("^((([!#$%&'*+\\-/=?^_`{|}~\\w])|([!#$%&'*+\\-/=?^_`{|}~\\w][!#$%&'*+\\-/=?^_`{|}~\\.\\w]{0,}" +
+        //    "[!#$%&'*+\\-/=?^_`{|}~\\w]))[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)$", ErrorMessage = $"{nameof(Email)} Email is invalid, try another")]
         public required string Email { get; set; }
 
         [Required]
@@ -36,6 +36,7 @@ namespace Contacts.Domain.DbEntites
         [RegularExpression("^[0-9]{9}$", ErrorMessage = $"{nameof(PhoneNumber)} at least 9 characters required")]
         public int PhoneNumber { get; set; }
 
+        [Required]
         public DateTime DateOfBirth { get; set; }
     }
 }

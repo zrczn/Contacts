@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Contacts.BlazorWASM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0be89e1ba4d73e600eb6242c9eb37f4fc561c762")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d1fe352c699f808fe562f9c8cbd516dcce0a0fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Contacts.BlazorWASM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Contacts.BlazorWASM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

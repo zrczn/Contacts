@@ -16,6 +16,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Contacts.Security.Services;
+using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
 
 namespace Contacts.Security
 {
@@ -30,7 +32,11 @@ namespace Contacts.Security
             service.AddScoped<ILoginManager, LoginManager>();
             service.AddScoped<IUserManager, UserManager>();
 
-            service.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            service.AddAuthentication(o =>
+            {
+                o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
                 .AddJwtBearer(opt =>
                 {
                     opt.RequireHttpsMetadata = false;
@@ -49,29 +55,28 @@ namespace Contacts.Security
 
                     opt.Events = new JwtBearerEvents()
                     {
-                        OnAuthenticationFailed = x =>
+                        OnAuthenticationFailed = c =>
                         {
-                            x.NoResult();
-                            x.Response.StatusCode = 500;
-                            x.Response.ContentType = "text/plain";
-
-                            return x.Response.WriteAsync(x.Exception.ToString());
+                            c.NoResult();
+                            c.Response.StatusCode = 500;
+                            c.Response.ContentType = "text/plain";
+                            return c.Response.WriteAsync(c.Exception.ToString());
                         },
-                        OnChallenge = y =>
+                        //OnChallenge = context =>
+                        //{
+                        //    context.HandleResponse();
+                        //    context.Response.StatusCode = 401;
+                        //    context.Response.ContentType = "application/json";
+                        //    var result = JsonConvert.SerializeObject("401 Not authorized");
+                        //    return context.Response.WriteAsync(result);
+                        //},
+                        OnForbidden = context =>
                         {
-                            y.HandleResponse();
-                            y.Response.StatusCode = 401;
-                            y.Response.ContentType = "text/plain";
-
-                            return y.Response.WriteAsync("onchallenge");
+                            context.Response.StatusCode = 403;
+                            context.Response.ContentType = "application/json";
+                            var result = JsonConvert.SerializeObject("403 Not authorized");
+                            return context.Response.WriteAsync(result);
                         },
-                        OnForbidden = z =>
-                        {
-                            z.Response.StatusCode = 403;
-                            z.Response.ContentType = "text/plain";
-
-                            return z.Response.WriteAsync("access denied");
-                        }
                     };
                 }
                 );

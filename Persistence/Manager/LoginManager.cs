@@ -27,5 +27,7 @@ namespace Contacts.Security.Manager
 
             return (SignInResult.Success, getUser);
         }
+
+
     }
 }

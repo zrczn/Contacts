@@ -19,6 +19,18 @@ namespace Contacts.Security.Manager
             _dbCon = contactsDatabaseContext;
         }
 
+        //public async Task<User> FetchUserAsync(string login, string password)
+        //{
+        //    User getUser = await _dbCon.Users.FirstOrDefaultAsync(x => x.Login == login);
+
+        //    var tryToVerify = BCrypt.Net.BCrypt.Verify(password, getUser.Password);
+
+        //    if (!tryToVerify)
+        //        return null;
+
+        //    return await _dbCon.Users.Include(y => y.Role).FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
+        //}
+
         public async Task<User> FetchUserAsync(string login, string password)
             => await _dbCon.Users.Include(y => y.Role).FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
 

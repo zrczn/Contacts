@@ -36,6 +36,22 @@ namespace Contacts.Persistence
                 .HasOne(x => x.Role)
                 .WithMany(y => y.Users)
                 .HasForeignKey(z => z.RoleId);
+
+            //modelBuilder.Entity<User>()
+            //    .Property(x => x.Password)
+            //    .HasConversion(
+            //        x => BCrypt.Net.BCrypt
+            //            .EnhancedHashPassword(x),
+            //        x => x
+            //    );
+
+            //modelBuilder.Entity<Person>()
+            //    .Property(x => x.Password)
+            //                    .HasConversion(
+            //        x => BCrypt.Net.BCrypt
+            //            .EnhancedHashPassword(x),
+            //        x => x
+            //    );
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Contacts.Domain.Repositories;
+﻿using Contacts.Domain.IRepositories;
+using Contacts.Domain.Repositories;
 using Contacts.Persistence.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -11,10 +12,12 @@ namespace Contacts.Persistence
 {
     public static class InfrastructureInstaller
     {
-        public static IServiceCollection AddInfrastructureServices(this IServiceCollection descriptors)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection service)
         {
-            descriptors.AddScoped<IContactRepository, ContactRepository>();
-            return descriptors;
+            service.AddScoped<IContactRepository, ContactRepository>();
+            service.AddScoped<IPersonRepository, PersonRepository>();
+
+            return service;
         }
     }
 }

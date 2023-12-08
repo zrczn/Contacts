@@ -144,3 +144,7 @@ D:\Repos\Repos22\PhoneBook\PhoneBook\obj\Debug\net8.0\refint\Contacts.API.dll
 D:\Repos\Repos22\PhoneBook\PhoneBook\obj\Debug\net8.0\Contacts.API.pdb
 D:\Repos\Repos22\PhoneBook\PhoneBook\obj\Debug\net8.0\Contacts.API.genruntimeconfig.cache
 D:\Repos\Repos22\PhoneBook\PhoneBook\obj\Debug\net8.0\ref\Contacts.API.dll
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Scrutor.dll
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+D:\Repos\Repos22\PhoneBook\PhoneBook\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
