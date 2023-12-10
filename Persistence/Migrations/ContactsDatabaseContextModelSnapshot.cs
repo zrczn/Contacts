@@ -41,6 +41,35 @@ namespace Contacts.Persistence.Migrations
                     b.HasIndex("ParentContactId");
 
                     b.ToTable("Contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("212e7d98-3c46-41ce-bab3-681fd85defd4"),
+                            Name = "prywatny"
+                        },
+                        new
+                        {
+                            Id = new Guid("6d9e0e98-4d18-4a85-84f0-091f7cb84c86"),
+                            Name = "inny"
+                        },
+                        new
+                        {
+                            Id = new Guid("df115677-64a9-4603-815c-851db272a33a"),
+                            Name = "sluzbowy"
+                        },
+                        new
+                        {
+                            Id = new Guid("733916b6-da40-47a0-8326-5f15b585a035"),
+                            Name = "szef",
+                            ParentContactId = new Guid("df115677-64a9-4603-815c-851db272a33a")
+                        },
+                        new
+                        {
+                            Id = new Guid("2c9d97e8-c054-4947-95b4-c2bdc7f0851d"),
+                            Name = "klient",
+                            ParentContactId = new Guid("df115677-64a9-4603-815c-851db272a33a")
+                        });
                 });
 
             modelBuilder.Entity("Contacts.Domain.DbEntites.Person", b =>
@@ -81,6 +110,30 @@ namespace Contacts.Persistence.Migrations
                     b.HasIndex("ContactId");
 
                     b.ToTable("Persons");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("194f7583-c230-46c7-be5c-8077ece78d9a"),
+                            ContactId = new Guid("733916b6-da40-47a0-8326-5f15b585a035"),
+                            DateOfBirth = new DateTime(1990, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "Test1@gmail.com",
+                            FirstName = "Test1",
+                            LastName = "LastName1",
+                            Password = "haslo1",
+                            PhoneNumber = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5238cf46-b7bc-4d1a-abb5-b3efaeb6c3e8"),
+                            ContactId = new Guid("733916b6-da40-47a0-8326-5f15b585a035"),
+                            DateOfBirth = new DateTime(1995, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "Test2@gmail.com",
+                            FirstName = "Test2",
+                            LastName = "LastName2",
+                            Password = "haslo2",
+                            PhoneNumber = 111111111
+                        });
                 });
 
             modelBuilder.Entity("Contacts.Domain.DbEntites.Role", b =>
@@ -96,6 +149,13 @@ namespace Contacts.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ebf54045-415a-48ee-af1a-09e5a70c7499"),
+                            RoleType = "User"
+                        });
                 });
 
             modelBuilder.Entity("Contacts.Domain.DbEntites.User", b =>
@@ -120,6 +180,15 @@ namespace Contacts.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("353fe9e5-2d8b-4d43-a1fb-f8f0e461b42a"),
+                            Login = "TestUser",
+                            Password = "0db32429d0398d23872b01db915daf6d6e75015eab57f2a43b2952a70efe79da",
+                            RoleId = new Guid("ebf54045-415a-48ee-af1a-09e5a70c7499")
+                        });
                 });
 
             modelBuilder.Entity("Contacts.Domain.DbEntites.Contact", b =>

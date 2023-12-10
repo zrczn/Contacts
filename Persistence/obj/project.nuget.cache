@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "f5GUwVa4gFIziLQoa9LauXWc1BKx4Jkch71Um9KNhP1+AB46htYAZw6t7dwIMPXcOvwkrgtBqp8y5fdJxA3/1w==",
+  "dgSpecHash": "/bod+2rpGHJ4H/bTmwRYY4sH1+5bIQaGHqGgrZAKg8krLrS+n39AotZmXYS/3/r/i/bUQEkLy4i46+4coE4opg==",
   "success": true,
   "projectFilePath": "D:\\Repos\\Repos22\\PhoneBook\\Persistence\\Contacts.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Patryk\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Patryk\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Patryk\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Patryk\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Patryk\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Patryk\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

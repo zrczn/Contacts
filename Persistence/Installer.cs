@@ -18,6 +18,8 @@ using System.Threading.Tasks;
 using Contacts.Security.Services;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
+using Contacts.Persistence.Contracts;
+using Contacts.Persistence.Services;
 
 namespace Contacts.Security
 {
@@ -35,6 +37,7 @@ namespace Contacts.Security
             service.AddTransient<IAuthenticationService, AuthenticationService>();
             service.AddScoped<ILoginManager, LoginManager>();
             service.AddScoped<IUserManager, UserManager>();
+            service.AddSingleton<IPasswordService, PasswordService>();
 
             service.AddAuthentication(opt =>
             {
@@ -55,8 +58,6 @@ namespace Contacts.Security
                     ValidateIssuerSigningKey = true
                 };
             });
-
-
 
         }
     }

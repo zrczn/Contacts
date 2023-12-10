@@ -30,7 +30,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<ContactsDatabaseContext>
+builder.Services.AddDbContext<ContactsDatabaseContext>                                  //rejestracja DB
     (opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 var app = builder.Build();

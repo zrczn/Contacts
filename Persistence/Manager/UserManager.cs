@@ -20,7 +20,7 @@ namespace Contacts.Security.Manager
         }
 
         public async Task<User> FetchUserAsync(string login, string password)
-            => await _dbCon.Users.Include(y => y.Role).FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
+            => await _dbCon.Users.Include(y => y.Role).FirstOrDefaultAsync(x => x.Login == login);
 
     }
 }
