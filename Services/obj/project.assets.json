@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Contacts.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Contacts.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contacts.Domain.dll": {}
+        }
+      },
+      "Contacts.Services.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Contacts.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contacts.Services.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contacts.Services.Abstractions.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Contacts.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Contacts.Domain/Contacts.Domain.csproj",
+      "msbuildProject": "../Contacts.Domain/Contacts.Domain.csproj"
+    },
+    "Contacts.Services.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../ServicesAbstractions/Contacts.Services.Abstractions.csproj",
+      "msbuildProject": "../ServicesAbstractions/Contacts.Services.Abstractions.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Contacts.Services.Abstractions >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Patryk\\.nuget\\packages\\": {},
@@ -39,7 +76,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Repos\\Repos22\\PhoneBook\\ServicesAbstractions\\Contacts.Services.Abstractions.csproj": {
+              "projectPath": "D:\\Repos\\Repos22\\PhoneBook\\ServicesAbstractions\\Contacts.Services.Abstractions.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

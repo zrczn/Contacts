@@ -1134,13 +1134,15 @@
         }
       },
       "Contacts.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Core": "2.2.0"
+        },
         "runtime": {
           "Contacts.Domain.dll": {}
         }
       },
       "Contacts.Persistence/1.0.0": {
         "dependencies": {
-          "BCrypt.Net-Next": "4.0.3",
           "Contacts.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",

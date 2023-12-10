@@ -1,0 +1,58 @@
+﻿@page "/person/{id}"
+@using Contacts.BlazorWASM.Service
+@using System.Net.Http.Headers
+@inject ITokenManager tokenMngr;
+@inject HttpClient cliHttp
+
+@if (busy)
+{
+    <p>Loading...</p>
+}
+else
+{
+    if (!IsAuthorized)
+    {
+        <p>You are not authorized to see this content! please log in first</p>
+    }
+    else
+    {
+        <p>@(person.Id)</p>
+    }
+}
+
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private bool IsAuthorized = false;
+    private bool busy = true;
+    private Person person { get; set; }
+
+    protected override void OnInitialized()
+    {
+        var id = Guid.Parse(Id);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string token = await tokenMngr.GetToken();
+        Console.WriteLine($"Token: {token}"); // Log the token
+        cliHttp.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+        Console.WriteLine($"Headers: {cliHttp.DefaultRequestHeaders}"); // Log the headers
+
+        var response = await cliHttp.GetAsync($"http://localhost:5212/person/{Id}");
+
+        Console.WriteLine($"Response: {response}"); // Log the response
+
+        if (response.IsSuccessStatusCode)
+        {
+            person = await response.Content.ReadFromJsonAsync<Person>();
+            IsAuthorized = true;
+        }
+
+        busy = false;
+    }
+
+}

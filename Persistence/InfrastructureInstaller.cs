@@ -14,6 +14,8 @@ namespace Contacts.Persistence
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection service)
         {
+            //dodanie kontenera DI dla repozytorium
+
             service.AddScoped<IContactRepository, ContactRepository>();
             service.AddScoped<IPersonRepository, PersonRepository>();
 

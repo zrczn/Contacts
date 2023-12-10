@@ -1,29 +1,33 @@
 ﻿@page "/"
+@inject HttpClient httpCli;
 
+@if (_personsOverall is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <TableComponent
+        Items="_personsOverall"/>
+}
 
-<PageTitle>Home</PageTitle>
+@code {
+    private List<PersonDisplay> _personsOverall;
 
-<h1>Hello, world!</h1>
-
-
-<Contacts.BlazorWASM.Components.TableComponent
-    Items="contacts">
-</Contacts.BlazorWASM.Components.TableComponent>
-
-@code{
-    public static List<PersonDisplay> contacts = new List<PersonDisplay>()
+    protected override async Task OnInitializedAsync()
     {
-        new PersonDisplay()
+        try
         {
-             FirstName = "andrev",
-              LastName = "djd",
-               Id = Guid.NewGuid()
-        },
-        new PersonDisplay()
+            _personsOverall = await httpCli.GetFromJsonAsync<List<PersonDisplay>>("http://localhost:5212/person/");
+        }
+        catch (Exception ex)
         {
-             FirstName = "monica",
-              LastName = "kkk",
-               Id = Guid.NewGuid()
-        },
-    };
+            throw new Exception(ex.Message);
+        }
+    }
+
+    private void Clicked()
+    {
+        
+    }
 }

@@ -21,6 +21,10 @@ namespace Contacts.Persistence.Repositories
             _contactRepo = contactRepository;
         }
 
+        //w zależności od podanego id:
+        //jeżeli nie istnieje stwórz nową personę wdłg PersonDTO
+        //jeżeli istnieje aktualizuj o PersonDTO
+
         public async Task<int> CrupDatePersonAsync(Guid Id, PersonDTO person)
         {
             //0 - invalid contacts passed
@@ -148,6 +152,7 @@ namespace Contacts.Persistence.Repositories
             }
         }
 
+        //pobierz Person z przypisanym kontaktem i sub kontaktem
         public async Task<PersonDTO> GetPersonAsync(Guid Id)
         {
             var getPerson = await _DbCon.Persons.Include(y => y.Contact).ThenInclude(z => z.ContactRel).FirstOrDefaultAsync(x => x.Id == Id);
@@ -184,6 +189,8 @@ namespace Contacts.Persistence.Repositories
 
             return intoPersonDTO;
         }
+
+        //pobierz Person z danymi ogólnymi, (dostępna dla każdego)
 
         public async Task<IEnumerable<PersonDisplay>> GetPersonOverallAsync()
         {

@@ -8,40 +8,26 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddInfrastructureServices();
-builder.Services.AddSecServices(builder.Configuration);
+builder.Services.AddInfrastructureServices();           //dodaj repozytoria
+builder.Services.AddSecServices(builder.Configuration); //dodaj konfiguracjê JWT z warstw¹ autentykacji
 
+builder.Services.AddAuthorization();
+
+builder.Services.AddCors(           //ka¿da aplikacja z tej samej domeny mo¿e odczytaæ API
+    opt =>
+    {
+        opt.AddPolicy("Open",
+            builder => builder.AllowAnyOrigin()
+            .AllowAnyHeader().AllowAnyMethod());
+    });
 
 builder.Services.AddControllers().AddNewtonsoftJson(opt =>
-    opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+    opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); //zezwól na fetchowanie 
+                                                                                                  //danych zale¿nych
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(option =>
-{
-    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
-    });
-    option.AddSecurityRequirement(new OpenApiSecurityRequirement
- {
-     {
-           new OpenApiSecurityScheme
-             {
-                 Reference = new OpenApiReference
-                 {
-                     Type = ReferenceType.SecurityScheme,
-                     Id = "Bearer"
-                 }
-             },
-             new string[] {}
-     }
- });
-});
+builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddDbContext<ContactsDatabaseContext>
@@ -55,7 +41,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("Open");
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

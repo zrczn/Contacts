@@ -2113,6 +2113,9 @@
       "Contacts.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Core": "2.2.0"
+        },
         "compile": {
           "bin/placeholder/Contacts.Domain.dll": {}
         },
@@ -2124,7 +2127,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "BCrypt.Net-Next": "4.0.3",
           "Contacts.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",

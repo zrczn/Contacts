@@ -22,8 +22,8 @@ namespace Contacts.Domain.DbEntites
 
         [Required]
         //https://regexlib.com
-        //[RegularExpression("^((([!#$%&'*+\\-/=?^_`{|}~\\w])|([!#$%&'*+\\-/=?^_`{|}~\\w][!#$%&'*+\\-/=?^_`{|}~\\.\\w]{0,}" +
-        //    "[!#$%&'*+\\-/=?^_`{|}~\\w]))[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)$", ErrorMessage = $"{nameof(Email)} Email is invalid, try another")]
+        [RegularExpression("^((([!#$%&'*+\\-/=?^_`{|}~\\w])|([!#$%&'*+\\-/=?^_`{|}~\\w][!#$%&'*+\\-/=?^_`{|}~\\.\\w]{0,}" +
+            "[!#$%&'*+\\-/=?^_`{|}~\\w]))[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)$", ErrorMessage = $"{nameof(Email)} Email is invalid, try another")]
         public required string Email { get; set; }
 
         [Required]
@@ -37,6 +37,7 @@ namespace Contacts.Domain.DbEntites
         public int PhoneNumber { get; set; }
 
         [Required]
+        [ValidateDate] //customowa DataAnnotation - osoba nie może podać daty z przyszłości
         public DateTime DateOfBirth { get; set; }
     }
 }

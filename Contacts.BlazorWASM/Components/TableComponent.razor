@@ -1,7 +1,6 @@
 ﻿@using System.Reflection
 @typeparam T
 
-<a>jal</a>
 <table class="table">
     <thead>
         <tr>
@@ -19,6 +18,9 @@
                 {
                     <td>@(prop.GetValue(item))</td>
                 }
+                <td>
+                    <a href="@($"/person/{_propertyInfos.First().GetValue(item)}")"
+                       class="nav-link"> Get Details </a></td>
             </tr>
         }
     </tbody>

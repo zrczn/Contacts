@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ServicesAbstractions\Contacts.Services.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

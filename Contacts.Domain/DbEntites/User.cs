@@ -9,6 +9,7 @@ namespace Contacts.Domain.DbEntites
 {
     public class User
     {
+        //użytkownik do logowania
         [Key]
         public Guid Id { get; set; }
 

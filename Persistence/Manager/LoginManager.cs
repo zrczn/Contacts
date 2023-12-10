@@ -13,6 +13,8 @@ namespace Contacts.Security.Manager
 {
     internal class LoginManager : ILoginManager
     {
+        //pobieranie usera z DB
+
         private readonly IUserManager _userManager;
 
         public LoginManager(IUserManager _userManager)

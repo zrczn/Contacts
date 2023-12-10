@@ -54,6 +54,11 @@ namespace Contacts.Persistence.Repositories
             }
         }
 
+        //pobieranie "drzewa" kontaktów
+        //zwraca rodzica z podmiotami
+        //np. sluzbowy i wszystke mu podległe
+        //służbowy, (klient, szef)
+
         public async Task<(ContactDTO, IEnumerable<ContactDTO>)> GetContactTreeAsync(Guid Id)
         {
             var checkForAnyContact = await _DbCon.Contacts.FirstOrDefaultAsync(x => x.Id == Id);

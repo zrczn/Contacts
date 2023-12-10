@@ -9,6 +9,7 @@ namespace Contacts.Domain.DbEntites
 {
     public class Role
     {
+        //role dla użytkownika
         [Key]
         public Guid Id { get; set; }
         [Required]

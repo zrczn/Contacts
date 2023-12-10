@@ -12,6 +12,9 @@ namespace Contacts.Persistence
 {
     public class ContactsDatabaseContext : DbContext
     {
+        //context bazy danych
+        //podejście code first
+
         public ContactsDatabaseContext(DbContextOptions<ContactsDatabaseContext> opt) : base(opt)
         {
             
@@ -26,32 +29,25 @@ namespace Contacts.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //swtórz tabelę z kluczem PK i FK jednocześnie
+            //FK działa jako pointer na kontakt nadrzędny (sluzbowy)
+            //PK referencja do kontaktu podrzędnego (szef)
+            //zablokuj w celu przeciwdziałania usuwania kaskadowego
+
             modelBuilder.Entity<Contact>()
                .HasOne(x => x.ContactRel)
                .WithMany(y => y.Contacts)
                .HasForeignKey(z => z.ParentContactId)
                .OnDelete(DeleteBehavior.Restrict);
 
+            //konfiguracja opcjonalna
+            //one-to-many nałożony poprzez konwencję w klasie domenowej
+
             modelBuilder.Entity<User>()
                 .HasOne(x => x.Role)
                 .WithMany(y => y.Users)
                 .HasForeignKey(z => z.RoleId);
 
-            //modelBuilder.Entity<User>()
-            //    .Property(x => x.Password)
-            //    .HasConversion(
-            //        x => BCrypt.Net.BCrypt
-            //            .EnhancedHashPassword(x),
-            //        x => x
-            //    );
-
-            //modelBuilder.Entity<Person>()
-            //    .Property(x => x.Password)
-            //                    .HasConversion(
-            //        x => BCrypt.Net.BCrypt
-            //            .EnhancedHashPassword(x),
-            //        x => x
-            //    );
         }
     }
 }

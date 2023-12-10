@@ -2,6 +2,7 @@
 using Contacts.Domain.DTO;
 using Contacts.Domain.IRepositories;
 using Contacts.Domain.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;

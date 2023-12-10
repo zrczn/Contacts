@@ -1,0 +1,51 @@
+﻿@page "/login"
+@using Blazored.LocalStorage
+@using Contacts.BlazorWASM.Service
+@using Contacts.Security.Models
+@using Newtonsoft.Json
+@inject HttpClient cliHttp
+@inject ITokenManager _tknMngr
+
+<EditForm Model="@_request" FormName="loginForm" OnSubmit="Submit">
+    <label for="Login">Enter Login: </label>
+    <InputText id="Login" @bind-Value="_request.Login" />
+    <label for="Password">Enter Password: </label>
+    <InputText id="Password" @bind-Value="_request.Password" placeholder="Password"></InputText>
+    <button type="submit">Log In</button>
+</EditForm>
+
+<div class="form-floating">
+    <textarea class="form-control" style="height: 100px" @bind="textArea"></textarea>
+    <label for="floatingTextarea2">JWT token</label>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private AuthRequest _request { get; set; }
+    private string textArea { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _request = new()
+            {
+                Login = "",
+                Password = ""
+            };
+    }
+
+    private async Task Submit()
+    {
+        var resp = await cliHttp.PostAsJsonAsync("http://localhost:5212/api/login", _request);
+
+        textArea = await resp.Content.ReadAsStringAsync();
+
+        if (resp.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            AuthResponse respObj = JsonConvert.DeserializeObject<AuthResponse>(textArea);
+            await _tknMngr.SaveToken(respObj.Token ??= "0");
+        }
+
+
+    }
+
+}
